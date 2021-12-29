@@ -362,8 +362,8 @@ class BaseSolver(ABC, PretrainedSolver):
 
                 # accumulate gradients before the current graph is collected as garbage
                 if key == 'train':
-                    # loss.backward()
-                    loss.backward(create_graph=True)
+                    loss.backward()
+                    # loss.backward(create_graph=True)
                     batch_loss = loss.item()
                 return loss
 
